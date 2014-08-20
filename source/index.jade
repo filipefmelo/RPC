@@ -1,0 +1,38 @@
+!!! 5
+html(lang='en')
+head
+    title Rock, Paper, Scissors, Whatever for eBay Inc - Filipe Melo
+    link(rel='stylesheet', href='css/main.css')
+    script(src='js/javascript.js')
+    script
+        //create game root
+        var game = new GameState();
+    body
+        //
+           GAME TYPE CHOICE
+        #gameTypeChoice
+            h3 Choose the type of game
+            a(href='javascript:void(0);', onclick='game.chooseType(\'PvsC\');') Player vs Computer
+            a(href='javascript:void(0);', onclick='game.chooseType(\'CvsC\');') Computer vs Computer
+        //
+           GAME PLAY
+        #gamePlay
+            h3 Hustle!
+            #turnTimer
+            #playerOne
+                .name
+                .score
+                .commands.play-choice
+            #playerTwo
+                .name
+                .score
+                .commands.play-choice
+            #message
+        //
+           GAME RESULTS
+        #gameResults
+        script
+            (function () {
+            game.config();
+            })();
+                          
