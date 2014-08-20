@@ -1,4 +1,4 @@
 RPC
 ===
 
-Rock, Paper, Scissors - eBay Inc
+> Rock, Paper, Scissors game for eBay Inc hiring process
