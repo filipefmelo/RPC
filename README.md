@@ -3,4 +3,6 @@ RPC
 
 > Rock, Paper, Scissors game for eBay Inc hiring process
 
-#### REQUIRES node.js previous installation
+#### Requires node.js to be previously installed
+
+## Test
