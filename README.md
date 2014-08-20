@@ -5,4 +5,13 @@ RPC
 
 #### Requires node.js to be previously installed
 
-## Test
+##### to install run:
+```js
+  npm install
+```
+##### to run, fir run:
+```js
+  grunt
+```
+
+##### then open index.html from the "destination" folder
