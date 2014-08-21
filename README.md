@@ -9,10 +9,10 @@ RPC
 ```js
   npm install
 ```
-##### to run, first run:
+##### to run:
 ```js
   grunt
 ```
-##### then open index.html from the "destination" folder
+##### then open http://127.0.0.1:1337
 
-No server is included, use your own. Node, Apache, IIS (blergh)...
+
