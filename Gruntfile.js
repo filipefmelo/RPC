@@ -1,7 +1,8 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jade');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
@@ -35,10 +36,22 @@ module.exports = function(grunt) {
                     'destination/js/javascript.js': 'source/js/*.js'
                 }
             }
+        },
+
+        copy: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: './source/img',
+                        src: ['**'],
+                        dest: 'destination/img'}
+                ]
+            }
         }
     });
 
-    grunt.registerTask('default', ['jade', 'sass', 'uglify']);
+    grunt.registerTask('default', ['jade', 'sass', 'uglify', 'copy']);
 
 };
 

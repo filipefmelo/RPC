@@ -1,38 +1,45 @@
 !!! 5
 html(lang='en')
 head
-    title Rock, Paper, Scissors, Whatever for eBay Inc - Filipe Melo
+    title Rock, Paper, Scissors, whatever for eBay Inc - Filipe Melo
     link(rel='stylesheet', href='css/main.css')
     script(src='js/javascript.js')
-    script
-        //create game root
+    script(type='text/javascript')
         var game = new GameState();
     body
         //
            GAME TYPE CHOICE
         #gameTypeChoice
+            img(src='img/logo.png')
             h3 Choose the type of game
-            a(href='javascript:void(0);', onclick='game.chooseType(\'PvsC\');') Player vs Computer
-            a(href='javascript:void(0);', onclick='game.chooseType(\'CvsC\');') Computer vs Computer
+            a(href='javascript:void(0);', onclick='game.chooseType(\'PvsC\');', title='Player versus Computer')
+                img(src='img/PvsC.png', border='0')
+            a(href='javascript:void(0);', onclick='game.chooseType(\'CvsC\');', title='Computer versus Computer')
+                img(src='img/CvsC.png', border='0')
         //
            GAME PLAY
         #gamePlay
-            h3 Hustle!
-            #turnTimer
-            #playerOne
-                .name
-                .score
-                .commands.play-choice
-            #playerTwo
-                .name
-                .score
-                .commands.play-choice
+            h1 Hustle!
+            .playArena
+                #playerOne.players
+                    .name
+                    .score
+                    .play-choice
+                        img(src='img/noplay.png')
+                #playerTwo.players
+                    .name
+                    .score
+                    .play-choice
+                        img(src='img/noplay.png')
+            #commands
             #message
         //
            GAME RESULTS
         #gameResults
+            .message
+            a(href='javascript:void(0);', onclick='game.restart();') Restart game
         script
-            (function () {
+            (function() {
             game.config();
             })();
-                          
+                                   

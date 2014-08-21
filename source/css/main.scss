@@ -1,6 +1,106 @@
-.scss-awesomeness {
-  border-bottom: 1px solid #eeeeee;
-  .groovy {
-    color: red
+html {
+  font-family: Verdana;
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(top right, #FFFFFF 0%, #78B0A0  100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(top right, #FFFFFF 0%, #78B0A0  100%);
+  /* Opera */
+  background-image: -o-linear-gradient(top right, #FFFFFF 0%, #78B0A0  100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #78B0A0 ));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #78B0A0  100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to bottom left, #FFFFFF 0%, #78B0A0  100%);
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+#gameTypeChoice {
+  text-align: center;
+  h3 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  a:nth-of-type(1) {
+    margin-right: 50px;
+  }
+}
+
+#gamePlay {
+  text-align: center;
+}
+
+.players {
+  float: left;
+  margin-right: 20px;
+  :last-child {
+    margin-right: 0px;
+  }
+  .name {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .score {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 46px;
+  }
+}
+
+.playArena {
+  width: 326px;
+  position: absolute;
+  left: 50%;
+  margin-left: -163px;
+}
+
+#commands {
+  position: absolute;
+  left: 50%;
+  margin-left: -215px;
+  width: 430px;
+  bottom: 20px;
+  a{
+    margin-right: 20px;
+  }
+  a:last-child{
+    margin-right: 0px;
+  }
+}
+
+#gameResults {
+  display: block;
+  width: 360px;
+  margin-left: -180px;
+  left: 50%;
+  height: 50px;
+  margin-top: -25px;
+  top: 50%;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  .message {
+    font-weight: bold;
+    font-size: 36px;
+    color: #D2691E;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    background-color: #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  a:hover {
+    color: #333;
+    background-color: #fff;
   }
 }
