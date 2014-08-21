@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
@@ -48,10 +49,16 @@ module.exports = function (grunt) {
                         dest: 'destination/img'}
                 ]
             }
+        },
+
+        shell: {
+            server: {
+                command: 'node Server.js'
+            }
         }
     });
 
-    grunt.registerTask('default', ['jade', 'sass', 'uglify', 'copy']);
+    grunt.registerTask('default', ['jade', 'sass', 'uglify', 'copy', 'shell:server']);
 
 };
 
