@@ -55,10 +55,18 @@ module.exports = function (grunt) {
             server: {
                 command: 'node Server.js'
             }
+        },
+
+        karma:{
+            unit:{
+                configFile:'config/karma-unit.conf.js'
+            }
         }
+
     });
 
     grunt.registerTask('default', ['jade', 'sass', 'uglify', 'copy', 'shell:server']);
+    grunt.registerTask('unit', ['karma:unit']);
 
 };
 

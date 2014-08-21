@@ -23,9 +23,7 @@ var GameState = function () {
             breakingScore = Math.ceil(bestOf / 2),
             score1 = this.player1.score,
             score2 = this.player2.score;
-        if (score1 + score2 === bestOf) { //we reached the end of plays
-            return score1 >= breakingScore ? this.player1 : this.player2;
-        } else if (score1 === breakingScore) { //player 1 wins by breaking score
+        if (score1 === breakingScore) { //player 1 wins by breaking score
             return this.player1;
         } else if (score2 === breakingScore) { //player 2 wins by breaking score
             return this.player2;
@@ -35,7 +33,7 @@ var GameState = function () {
 
     //make a play
     this.makePlay = function (index) {
-        if (!this.playable) return;
+        if (!this.playable) return false;
 
         if (this.gameType === 'PvsC') {
             var player1Play = this.gameObjects[index];
