@@ -25,4 +25,4 @@ RPC
   grunt unit
 ```
 
-#### to see the coverage report go to 
+##### to see the coverage report go to /source/coverage/**/index.html
