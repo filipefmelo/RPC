@@ -15,11 +15,6 @@ RPC
 ```
 ##### then open http://127.0.0.1:1337
 
-##### to run:
-```js
-  grunt
-```
-
 ##### to run unit tests:
 ```js
   grunt unit
