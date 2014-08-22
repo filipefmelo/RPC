@@ -15,6 +15,8 @@ var GameState = function () {
         this.gameObjects.scissors = new GameObject("Scissors", this.getGameObject("paper"));
         this.gameObjects.rock = new GameObject("Rock", this.getGameObject("scissors"));
         this.gameObjects.paper.wins = this.getGameObject("rock");
+        //the UI controller
+        this.UI = new UI();
     };
 
     //check which player wins
@@ -49,7 +51,7 @@ var GameState = function () {
             this.player2.score++;
         }
 
-        this.UI.updateScores();
+        this.UI.updateScores(this);
         this.UI.updateCurrentPlay(player1Play, player2Play);
 
         var winner = this.getWinner(5);
@@ -99,12 +101,10 @@ var GameState = function () {
 
 
     this.config = function () {
-        //the UI controller
-        this.UI = new UI();
         //start game type choice
         this.UI.showPhase(0);
         //draw UI
-        this.UI.drawInterface();
+        this.UI.drawInterface(this);
     };
 
     this.__constructor();

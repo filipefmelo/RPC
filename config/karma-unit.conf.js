@@ -7,12 +7,6 @@ module.exports = function(config) {
         // frameworks to use
         frameworks: ['jasmine'],
 
-        // list of files / patterns to load in the browser
-        files: [
-            'js/*.js',
-            'unit/*.js'
-        ],
-
         // list of files to exclude
         exclude: [
         ],
@@ -27,6 +21,13 @@ module.exports = function(config) {
             // (these files will be instrumented by Istanbul)
             'js/*.js': ['coverage']
         },
+
+        // list of files / patterns to load in the browser
+        files: [
+            'js/*.js',
+            'unit/configs.js',
+            'unit/*.js'
+        ],
 
         // optionally, configure the reporter
         coverageReporter: {

@@ -29,7 +29,7 @@ var UI = function () {
     };
 
     //draws a dynamic interface
-    this.drawInterface = function () {
+    this.drawInterface = function (game) {
         var gObjects = game.gameObjects,
             playerOne = this.player1.querySelector(".name"),
             playerTwo = this.player2.querySelector(".name"),
@@ -50,21 +50,12 @@ var UI = function () {
     };
 
     //updates score
-    this.updateScores = function () {
+    this.updateScores = function (game) {
         var playerOneScore = this.player1.querySelector(".score"),
             playerTwoScore = this.player2.querySelector(".score");
 
         playerOneScore.innerHTML = game.player1.score;
         playerTwoScore.innerHTML = game.player2.score;
-    };
-
-    //message the user
-    this.message = function (msg) {
-        var message = document.getElementById("message");
-        message.innerHTML = msg;
-        setTimeout(function () {
-            message.innerHTML = "";
-        }, 5000);
     };
 
     this.showWinner = function (winner) {

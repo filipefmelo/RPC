@@ -36,10 +36,12 @@ describe("GameState unit tests", function () {
         expect(gameState.makePlay('paper')).toBeFalsy();
     });
 
-    xit("should test makePlay extensively", function () {
-        var gameState = new GameState();
-        gameState.playable = true;
-        expect(gameState.makePlay('paper')).toBeFalsy();
+    xit("should make a play for the player", function () {
+        //TODO: make unit tests for makePlay
+    });
+
+    xit("should make a play for the computer", function () {
+        //TODO: make unit tests for makePlay
     });
 
     it("should get a gameObject", function () {
@@ -47,30 +49,62 @@ describe("GameState unit tests", function () {
         expect(gameState.getGameObject('paper').label).toBe("Paper");
     });
 
-    xit("should config", function () {
-        var gameState = new GameState();
-        gameState.config();
-        spyOn(document, 'getElementById').andCallFake(function () {
-
-        });
-        spyOn(gameState.UI, 'showPhase').andCallFake(function () {
-            
-        });
-        spyOn(gameState.UI, 'drawInterface').andCallFake(function () {
-
-        });
-        expect(gameState.UI).not.toBeNull();
-        expect(gameState.UI.showPhase).toHaveBeenCalledWith(0);
-        expect(gameState.UI.drawInterface).toHaveBeenCalled();
-    })
-
     it("should restart game", function () {
         var gameState = new GameState();
-        gameState.UI = new UI();
         spyOn(gameState.UI, 'showPhase');
         gameState.playable = false;
         gameState.restart();
         expect(gameState.playable).toBeTruthy();
         expect(gameState.UI.showPhase).toHaveBeenCalled();
+    });
+
+    it("should make computer play", function () {
+        var gameState = new GameState();
+        spyOn(gameState.UI, 'drawInterface');
+        spyOn(gameState, 'makePlay').andCallFake(function () {});
+        spyOn(gameState.makePlay, 'bind').andCallFake(function () {});
+        spyOn(window, "setInterval").andCallFake(function () {});
+        gameState.computerPlay();
+        expect(gameState.player1.name).toBe("Computer 1");
+        expect(gameState.player2.name).toBe("Computer 2");
+        expect(window.setInterval).toHaveBeenCalled();
+    });
+
+    it("should choose type with CvsC", function () {
+        var gameState = new GameState();
+        spyOn(gameState.UI, 'showPhase');
+        spyOn(gameState.UI, 'reset');
+        spyOn(gameState, 'computerPlay').andCallFake(function () {});
+        gameState.chooseType('CvsC');
+
+        expect(gameState.UI.showPhase).toHaveBeenCalledWith(1);
+        expect(gameState.player1.score).toBe(0);
+        expect(gameState.player2.score).toBe(0);
+        expect(gameState.player1.name).toBe("Player");
+        expect(gameState.player2.name).toBe("Computer");
+        expect(gameState.computerPlay).toHaveBeenCalled();
+    });
+
+    it("should choose type with PvsC", function () {
+        var gameState = new GameState();
+        spyOn(gameState.UI, 'showPhase');
+        spyOn(gameState.UI, 'reset').andCallFake(function () {});
+        gameState.chooseType('PvsC');
+
+        expect(gameState.UI.showPhase).toHaveBeenCalledWith(1);
+        expect(gameState.player1.score).toBe(0);
+        expect(gameState.player2.score).toBe(0);
+        expect(gameState.player1.name).toBe("Player");
+        expect(gameState.player2.name).toBe("Computer");
+    });
+
+    it("should config", function () {
+        var gameState = new GameState();
+        spyOn(gameState.UI, 'showPhase');
+        spyOn(gameState.UI, 'drawInterface');
+        gameState.config();
+        expect(gameState.UI).not.toBeNull();
+        expect(gameState.UI.showPhase).toHaveBeenCalledWith(0);
+        expect(gameState.UI.drawInterface).toHaveBeenCalled();
     });
 });
