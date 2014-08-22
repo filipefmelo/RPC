@@ -2,3 +2,7 @@ node_modules
 .idea
 destination
 source/coverage
+.DS_Store
+.sass-cache/
+source/.DS_Store
+source/img/.DS_Store
