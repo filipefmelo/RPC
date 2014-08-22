@@ -9,7 +9,7 @@ RPC
 ```js
   npm install
 ```
-##### to merge JS, minimize CSS, render Jade and start the webserver, run:
+##### to merge JS and minimize, render SCSS and minimize CSS, render Jade and minimize HTML and start the webserver, run:
 ```js
   grunt
 ```
