@@ -36,6 +36,11 @@ module.exports = function (grunt) {
                 files: {
                     'destination/js/javascript.js': 'source/js/*.js'
                 }
+            },
+            options: {
+                mangle: true,
+                compress: true,
+                beautify: false
             }
         },
 
@@ -65,7 +70,8 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('default', ['jade', 'sass', 'uglify', 'copy', 'shell:server']);
+    grunt.registerTask('build' ,['jade', 'sass', 'uglify', 'copy']);
+    grunt.registerTask('default', ['build', 'shell:server']);
     grunt.registerTask('unit', ['karma:unit']);
 
 };

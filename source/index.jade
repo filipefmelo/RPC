@@ -5,7 +5,11 @@ head
     link(rel='stylesheet', href='css/main.css')
     script(src='js/javascript.js')
     script(type='text/javascript')
-        var game = new GameState();
+        var game = null;
+        document.addEventListener('DOMContentLoaded', function () {
+            game = new GameState();
+            game.config();
+        }, false);
     body
         //
            GAME TYPE CHOICE
@@ -38,8 +42,3 @@ head
         #gameResults
             .message
             a(href='javascript:void(0);', onclick='game.restart();') Restart game
-        script
-            (function() {
-            game.config();
-            })();
-                                   

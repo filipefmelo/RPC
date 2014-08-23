@@ -29,7 +29,7 @@ var UI = function () {
     };
 
     //draws a dynamic interface
-    this.drawInterface = function (game) {
+    this.drawInterface = function () {
         var gObjects = game.gameObjects,
             playerOne = this.player1.querySelector(".name"),
             playerTwo = this.player2.querySelector(".name"),
@@ -50,7 +50,7 @@ var UI = function () {
     };
 
     //updates score
-    this.updateScores = function (game) {
+    this.updateScores = function () {
         var playerOneScore = this.player1.querySelector(".score"),
             playerTwoScore = this.player2.querySelector(".score");
 

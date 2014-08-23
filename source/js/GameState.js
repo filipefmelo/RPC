@@ -15,7 +15,8 @@ var GameState = function () {
         this.gameObjects.scissors = new GameObject("Scissors", this.getGameObject("paper"));
         this.gameObjects.rock = new GameObject("Rock", this.getGameObject("scissors"));
         this.gameObjects.paper.wins = this.getGameObject("rock");
-        //the UI controller
+
+        //create the UI
         this.UI = new UI();
     };
 
