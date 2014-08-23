@@ -38,7 +38,7 @@ h3 {
 .players {
   float: left;
   margin-right: 20px;
-  :last-child {
+  &:last-child {
     margin-right: 0px;
   }
   .name {
