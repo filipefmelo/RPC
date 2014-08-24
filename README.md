@@ -1,7 +1,7 @@
 RPC
 ===
 
-> Rock, Paper, Scissors game for eBay Inc hiring process
+> Rock, Paper, Scissors game
 >> Jade, SCSS, JS, Grunt, Node, Karma
 
 #### Requires node.js to be previously installed
