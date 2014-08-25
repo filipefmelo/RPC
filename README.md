@@ -4,7 +4,8 @@ RPC
 > Rock, Paper, Scissors game
 >> Jade, SCSS, JS, Grunt, Node, Karma
 
-Build:
+Build Status:
+
 [ ![Codeship Status for filipefmelo/RPC](https://codeship.io/projects/1ad98f50-0e8f-0132-644f-02d5bf339ff4/status)](https://codeship.io/projects/32448)
 
 #### Requires node.js to be previously installed
